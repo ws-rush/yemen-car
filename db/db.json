@@ -1,12 +1,108 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" },
-    { "id": 2, "title": "json-server1", "author": "typicode1" },
-    { "id": 3, "title": "json-server2", "author": "typicode2" },
-    { "id": 4, "title": "json-server3", "author": "typicode3" },
-    { "id": 5, "title": "json-server4", "author": "typicode4" },
-    { "id": 6, "title": "json-server5", "author": "typicode5" }
+  "cars": [
+    {
+      "id": 1,
+      "name": "Car 1",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 1000,
+      "company": "Company 1",
+      "title": "Title 1",
+      "model": "Model 1",
+      "status": "excellent",
+      "description": "Description 1"
+    },
+    {
+      "id": 2,
+      "name": "Car 2",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 2000,
+      "company": "Company 2",
+      "title": "Title 2",
+      "model": "Model 2",
+      "status": "broken",
+      "description": "Description 2"
+    },
+    {
+      "id": 3,
+      "name": "Car 3",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 3000,
+      "company": "Company 3",
+      "title": "Title 3",
+      "model": "Model 3",
+      "status": "new",
+      "description": "Description 3"
+    },
+    {
+      "id": 4,
+      "name": "Car 4",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 4000,
+      "company": "Company 4",
+      "title": "Title 4",
+      "model": "Model 4",
+      "status": "excellent",
+      "description": "Description 4"
+    },
+    {
+      "id": 5,
+      "name": "Car 5",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 5000,
+      "company": "Company 5",
+      "title": "Title 5",
+      "model": "Model 5",
+      "status": "broken",
+      "description": "Description 5"
+    },
+    {
+      "id": 6,
+      "name": "Car 6",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 6000,
+      "company": "Company 6",
+      "title": "Title 6",
+      "model": "Model 6",
+      "status": "new",
+      "description": "Description 6"
+    },
+    {
+      "id": 7,
+      "name": "Car 7",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      "price": 7000,
+      "company": "Company 7",
+      "title": "Title 7",
+      "model": "Model 7",
+      "status": "excellent",
+      "description": "Description 7"
+    }
   ],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
-  "profile": { "name": "typicode" }
+  "companies": [
+    {
+      "id": 1,
+      "name": "Company 1",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+      "id": 2,
+      "name": "Company 2",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+      "id": 3,
+      "name": "Company 3",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+      "id": 4,
+      "name": "Company 4",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+      "id": 5,
+      "name": "Company 5",
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    }
+  ]
 }

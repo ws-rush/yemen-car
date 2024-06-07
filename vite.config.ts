@@ -1,8 +1,6 @@
-/// <reference types="vitest" />
-
 import { lingui } from '@lingui/vite-plugin'
 import react from '@vitejs/plugin-react'
-import UnoCSS from 'unocss/vite'
+import Icons from 'unplugin-icons/vite'
 import { defineConfig } from 'vite'
 import { imagetools } from 'vite-imagetools'
 import { plugin, Mode } from 'vite-plugin-markdown'
@@ -19,12 +17,6 @@ export default defineConfig(async () => {
   return {
     resolve: { alias: { '@': '/app' } },
 
-    // https://github.com/vitest-dev/vitest
-    test: {
-      include: ['test/**/*.{spec,test}.?(c|m)[jt]s?(x)'],
-      environment: 'happy-dom',
-    },
-
     plugins: [
       react({
         babel: {
@@ -33,7 +25,12 @@ export default defineConfig(async () => {
       }),
       remixRouter(),
       lingui(),
-      UnoCSS(),
+      Icons({
+        autoInstall: true,
+        compiler: 'jsx',
+        jsx: 'react',
+        defaultStyle: 'vertical-align: middle;',
+      }),
       Inspect(),
       topLevelAwait(),
       // add `declare module "@/content/*"` to vite-env.d.ts to use with typescript
