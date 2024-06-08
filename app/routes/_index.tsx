@@ -52,20 +52,17 @@ export function Component() {
               </Link>
             </section>
 
-            <section>
-              <ScrollArea>
-                <div className="flex w-max space-x-4 pb-4 justify-center gap-16">
-                  {data.map((url) => (
-                    <img
-                      alt={url.split('/').at(-1)?.replace('.svg', '')}
-                      className="w-20 h-20 invert"
-                      key={url}
-                      src={url}
-                    />
-                  ))}
-                </div>
-                <ScrollBar orientation="horizontal" />
-              </ScrollArea>
+            <section className="overflow-hidden">
+              <div className="flex w-max space-x-4 justify-center gap-16 animate-marquee">
+                {data.map((url) => (
+                  <img
+                    alt={url.split('/').at(-1)?.replace('.svg', '')}
+                    className="w-20 h-20 invert"
+                    key={url}
+                    src={url}
+                  />
+                ))}
+              </div>
             </section>
           </div>
         </div>
