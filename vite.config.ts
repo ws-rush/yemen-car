@@ -12,6 +12,9 @@ import remixRouter from 'unplugin-remix-router/vite'
 import { qrcode } from 'vite-plugin-qrcode'
 import Unimport from 'unimport/unplugin'
 
+// loader helpers
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+
 // https://vitejs.dev/config/
 export default defineConfig(async () => {
   return {
@@ -30,6 +33,11 @@ export default defineConfig(async () => {
         compiler: 'jsx',
         jsx: 'react',
         defaultStyle: 'vertical-align: middle;',
+        customCollections: {
+          'cars-logos': FileSystemIconLoader('./app/assets/logos', (svg) =>
+            svg.replace(/^<svg /, '<svg fill="currentColor" ')
+          ),
+        },
       }),
       Inspect(),
       topLevelAwait(),
