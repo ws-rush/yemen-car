@@ -1,7 +1,14 @@
 import RadixIconsMixerHorizontal from '~icons/radix-icons/mixer-horizontal'
 import RadixIconsPlus from '~icons/radix-icons/plus'
+import { useLoaderData } from 'react-router-dom'
+
+export async function loader() {
+  const { data } = await client.GET('/cars')
+  return data
+}
 
 export function Component() {
+  const cars = useLoaderData() as any[]
   return (
     <div>
       <div className="flex">
@@ -32,12 +39,17 @@ export function Component() {
         <h1 className="text-3xl">Available Cars</h1>
         {/* section for list cars in shadcn */}
         <div className="grid grid-cols-3 gap-4">
-          <Card className="w-64 h-10">
-            <img
-              alt="tets"
-              src="https://images.creativefabrica.com/products/previews/2024/03/18/qrxQzast1/2drgj1vHC38XOci2ELwdVnBqMpe-desktop.jpg"
-            />
-          </Card>
+          {cars.map((car) => (
+            <Card
+              className="w-64 h-10"
+              key={car.id}
+            >
+              <img
+                alt="tets"
+                src={car.images[0]}
+              />
+            </Card>
+          ))}
         </div>
         <div className="flex justify-center my-8">
           <Button>Load More</Button>

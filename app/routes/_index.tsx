@@ -28,28 +28,30 @@ export function Component() {
           </header>
 
           <div className="h-full flex flex-col justify-evenly">
-            <section className="flex flex-col gap-3">
-              <h2 className="text-4xl md:text-5xl">
-                <strong>Get</strong> Your <br /> Next <strong>Car</strong>
-              </h2>
-              <span className="md:text-lg max-w-96 text-gray-700 dark:text-gray-200">
-                While lease deals can offer great prices on a new car or truck,
-                you may find yourself looking.
-              </span>
-            </section>
+            <section className="flex flex-col gap-8">
+              <div className="flex flex-col gap-3">
+                <h2 className="text-5xl md:text-6xl">
+                  <strong>Get</strong> Your <br /> Next <strong>Car</strong>
+                </h2>
+                <span className="md:text-lg max-w-96 text-gray-700 dark:text-gray-200">
+                  While lease deals can offer great prices on a new car or
+                  truck, you may find yourself looking.
+                </span>
+              </div>
 
-            <section className="flex flex-col gap-2 w-full items-center space-x-2">
-              <Input
-                className="block h-12 md:h-16 border-2 placeholder:text-gray-900 dark:placeholder:text-gray-50 dark:focus-visible:ring-white"
-                placeholder="get your next car"
-                type="search"
-              />
-              <Link
-                className="self-start dark:text-white underline"
-                to="/list"
-              >
-                or browse all cars
-              </Link>
+              <div className="flex flex-col gap-2 w-full items-center space-x-2">
+                <Input
+                  className="block h-12 md:h-16 border-2 placeholder:text-gray-900 dark:placeholder:text-gray-50 dark:focus-visible:ring-white"
+                  placeholder="get your next car"
+                  type="search"
+                />
+                <Link
+                  className="self-start dark:text-white underline"
+                  to="/list"
+                >
+                  or browse all cars
+                </Link>
+              </div>
             </section>
 
             <section className="overflow-hidden">

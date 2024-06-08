@@ -32,6 +32,7 @@
 
     // Don't like
     "no-undef": "off", // disable coz typescript check it already
+    "@typescript-eslint/no-explicit-any": "off", // disable any only for this project
     "prettier/prettier": "off",
     "canonical/filename-match-exported": "off",
     "func-style": "off",
