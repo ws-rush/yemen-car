@@ -1,8 +1,20 @@
+import RadixIconsMixerHorizontal from '~icons/radix-icons/mixer-horizontal'
 import RadixIconsPlus from '~icons/radix-icons/plus'
 
 export function Component() {
   return (
     <div>
+      <div className="flex">
+        <Input
+          className="block h-12"
+          placeholder="get your next car"
+          type="search"
+        />
+        <Button className="h-12 md:hidden">
+          <RadixIconsMixerHorizontal />
+        </Button>
+      </div>
+
       <section className="flex items-center justify-between">
         <div className="flex flex-col gap-3 my-8">
           <h1 className="text-4xl">Welcome Back</h1>
