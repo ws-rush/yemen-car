@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "json-server": "json-server db/db.json5",
+    "json-server": "json-server db/db.json",
     "dev": "vite --host 0.0.0.0",
     "build": "tsc && vite build",
     "format": "prettier --write .",
@@ -90,7 +90,7 @@
     "eslint-plugin-sonarjs": "^0.23.0",
     "happy-dom": "^12.10.3",
     "husky": "^9.0.11",
-    "json-server": "1.0.0-beta.1",
+    "json-server": "0.17.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5",

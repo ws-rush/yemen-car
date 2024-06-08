@@ -43,11 +43,18 @@ export function Component() {
               </div>
 
               <div className="flex flex-col gap-2 w-full items-center space-x-2">
-                <Input
-                  className="block h-12 md:h-16 border-2 placeholder:text-gray-900 dark:placeholder:text-gray-50 dark:focus-visible:ring-white"
-                  placeholder="get your next car"
-                  type="search"
-                />
+                <Form
+                  action="/list"
+                  className="w-full"
+                  method="get"
+                >
+                  <Input
+                    className="block h-12 md:h-16 border-2 placeholder:text-gray-900 dark:placeholder:text-gray-50 dark:focus-visible:ring-white"
+                    name="q"
+                    placeholder="get your next car"
+                    type="search"
+                  />
+                </Form>
                 <Link
                   className="self-start underline"
                   to="/list"

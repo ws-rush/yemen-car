@@ -52,7 +52,7 @@ export default defineConfig(async () => {
           'react',
           'react-router-dom',
           'vitest',
-          { package: 'react-router-dom' },
+          { from: 'react-router-dom', imports: ['Form', 'useLoaderData'] },
         ],
         dirs: [
           './app/components/**',
