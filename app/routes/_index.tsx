@@ -9,7 +9,7 @@ export function Component() {
 
   return (
     <div
-      className="h-screen bg-small-screen md:bg-large-screen bg-cover bg-center grayscale-[90%] dark"
+      className="dark dark:text-white dark:bg-black h-screen bg-small-screen md:bg-large-screen bg-cover bg-center grayscale-[90%]"
       style={
         {
           '--large-screen': `url('${largeScreen}')`,
@@ -20,11 +20,11 @@ export function Component() {
       <div className="h-full w-11/12 md:w-8/12 m-auto">
         <div className="h-full flex flex-col">
           <header className="flex h-24 items-center">
-            <Link to="/">
-              <h1 className="mb-2 text-2xl md:text-3xl font-black italic tracking-tight">
-                <Trans>YemenCar.</Trans>
-              </h1>
-            </Link>
+            {/* <Link to="/"> */}
+            <h1 className="mb-2 text-2xl md:text-3xl font-black italic tracking-tight">
+              <Trans>YemenCar.</Trans>
+            </h1>
+            {/* </Link> */}
             {/* <div className="ml-auto flex items-center space-x-4">
               <h2>gggg</h2>
             </div> */}
@@ -49,7 +49,7 @@ export function Component() {
                   type="search"
                 />
                 <Link
-                  className="self-start dark:text-white underline"
+                  className="self-start underline"
                   to="/list"
                 >
                   or browse all cars
