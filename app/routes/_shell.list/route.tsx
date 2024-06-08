@@ -10,7 +10,7 @@ export async function loader() {
 }
 
 export function Component() {
-  const cars = useLoaderData() as any[]
+  const cars = useLoaderData() as Car[]
 
   return (
     <div>
