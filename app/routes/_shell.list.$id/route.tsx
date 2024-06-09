@@ -3,7 +3,7 @@ import { Gallery } from './components/gallery'
 import { type LoaderFunctionArgs } from 'react-router-dom'
 
 export async function loader({ params }: LoaderFunctionArgs) {
-  const response = await client.GET('/cars/{id}', {
+  const { data } = await client.GET('/cars/{id}', {
     params: {
       path: {
         id: params.id,
@@ -11,11 +11,30 @@ export async function loader({ params }: LoaderFunctionArgs) {
     },
   })
 
-  return response.data
+  const { data: fromSeller } = await client.GET('/cars', {
+    params: {
+      query: {
+        seller: data.seller,
+      },
+    },
+  })
+  const { data: fromCompany } = await client.GET('/cars', {
+    params: {
+      query: {
+        company: data.company,
+      },
+    },
+  })
+
+  return {
+    ...data,
+    fromCompany,
+    fromSeller,
+  }
 }
 
 export function Component() {
-  const car = useLoaderData() as Car
+  const car = useLoaderData() as ExtendedCar
 
   return (
     <div>
@@ -37,10 +56,44 @@ export function Component() {
           <p>{car.description}</p>
           <h3 className="text-xl font-semibold mb-2 mt-4">Features</h3>
           <CarFeatures />
-          <h3 className="text-xl font-semibold mb-2 mt-4">From Same Company</h3>
-          <h3 className="text-xl font-semibold mb-2 mt-4">From Same Seller</h3>
+          {car.fromComany?.length > 0 && (
+            <h3 className="text-xl font-semibold mb-2 mt-4">
+              From Same Company
+            </h3>
+          )}
+          <div className="flex gap-2 flex-wrap">
+            {car.fromComany?.map((compnayCar) => (
+              <Link
+                key={compnayCar.id}
+                to={`/list/${compnayCar.id}`}
+              >
+                <img
+                  className="w-24 md:w-44"
+                  src={compnayCar.images[0]}
+                />
+              </Link>
+            ))}
+          </div>
+          {car.fromSeller?.length > 0 && (
+            <h3 className="text-xl font-semibold mb-2 mt-4">
+              From Same Seller
+            </h3>
+          )}
+          <div className="flex gap-2 flex-wrap">
+            {car.fromSeller?.map((sellerCar) => (
+              <Link
+                key={sellerCar.id}
+                to={`/list/${sellerCar.id}`}
+              >
+                <img
+                  className="w-24 md:w-44"
+                  src={sellerCar.images[0]}
+                />
+              </Link>
+            ))}
+          </div>
         </section>
-        <section className="">
+        <section>
           <h3 className="text-xl px-2 py-4 border-b-2 border-white">
             <span className="font-semibold">Seller: </span>
             {car.seller}

@@ -31,6 +31,11 @@ interface Car {
   seats: number
 }
 
+interface ExtendedCar extends Car {
+  fromSeller: Car[]
+  fromComany: Car[]
+}
+
 interface Filter {
   q?: string | null
   status?: Status | null
