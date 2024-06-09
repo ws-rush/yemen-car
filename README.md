@@ -1,3 +1,17 @@
+## Run Project
+
+```sh
+git clone https://github.com/ws-rush/yemen-car
+cd yemen-car
+pnpm i
+
+# in one terminal: serve json db with public file
+pnpm json-server
+
+# in other terminal: serve project
+pnpm dev # or pnpm build && pnpm preview
+```
+
 <p align='center'>
   <img src='https://api.iconify.design/carbon:chart-radar.svg?color=%23939598' alt='Reactive - Opinionated Vite Starter Template' width='80'/>
 </p>
