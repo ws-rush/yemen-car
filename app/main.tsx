@@ -18,10 +18,12 @@ function Loader() {
 createRoot(document.querySelector('#root') as Element).render(
   <StrictMode>
     <I18nProvider i18n={i18n}>
-      <RouterProvider
-        fallbackElement={<Loader />}
-        router={router}
-      />
+      <TooltipProvider>
+        <RouterProvider
+          fallbackElement={<Loader />}
+          router={router}
+        />
+      </TooltipProvider>
       <ClickToComponent />
     </I18nProvider>
   </StrictMode>

@@ -52,6 +52,7 @@ export default defineConfig(async () => {
           'react',
           'react-router-dom',
           'vitest',
+          { package: 'lucide-react' },
           {
             from: 'react-router-dom',
             imports: ['Form', 'useLoaderData', 'useSubmit'],
