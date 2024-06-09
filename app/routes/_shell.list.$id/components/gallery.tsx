@@ -7,7 +7,7 @@ export function Gallery() {
       <div className="flex flex-col gap-2">
         <img
           alt="main image"
-          className="w-full"
+          className="h-96 w-full object-cover"
           src={selectedImage}
         />
         <div className="flex gap-2 w-full">
