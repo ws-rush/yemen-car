@@ -25,7 +25,7 @@ interface Car {
   images: string[]
   seller: string
   gearbox: Gearbox
-  fuel: Fule
+  fule: Fule
   milage: number
   status: Status
   seats: number
