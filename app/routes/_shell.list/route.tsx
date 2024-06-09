@@ -1,18 +1,26 @@
 import { AddButton } from './components/add-button'
 import { BackButton } from './components/back-button'
 import { Carcard } from './components/car-card'
+import { Search } from './components/search'
 import { Trans } from '@lingui/macro'
-import RadixIconsMixerHorizontal from '~icons/radix-icons/mixer-horizontal'
-import { type LoaderFunctionArgs, useSubmit } from 'react-router-dom'
+import { type LoaderFunctionArgs } from 'react-router-dom'
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const url = new URL(request.url)
+  // eslint-disable-next-line id-length
+  const q = url.searchParams.get('q')
+  const status: Status = url.searchParams.get('status')
+  const fule = url.searchParams.get('fule')
+  const gearbox = url.searchParams.get('gearbox')
+  const query: Filter = {}
+  // eslint-disable-next-line id-length
+  if (q) query.q = q
+  if (status) query.status = status
+  if (status) query.fule = fule
+  if (gearbox) query.gearbox = gearbox
   const { data } = await client.GET('/cars', {
     params: {
-      query: {
-        // eslint-disable-next-line id-length
-        q: url.searchParams.get('q'),
-      },
+      query,
     },
   })
 
@@ -20,31 +28,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
 }
 
 export function Component() {
-  const submit = useSubmit()
   const cars = useLoaderData() as Car[]
-  const [searchParameters] = useSearchParams()
 
   return (
     <div>
       <div className="fixed z-[-10] h-[134px] w-[134px] lg:w-[300px] lg:h-[300px] rounded-full bg-orange-500 blur-[150px] md:blur-[350px] opacity-50 left-0 top-0" />
       <div className="fixed z-[-10] h-[134px] w-[134px] lg:w-[300px] lg:h-[300px] rounded-full bg-violet-500 blur-[150px] md:blur-[350px] opacity-50 right-0 bottom-0" />
-      <Form
-        className="flex"
-        method="get"
-        onChange={(event) => submit(event.currentTarget)}
-        replace
-      >
-        <Input
-          className="block h-12"
-          defaultValue={searchParameters.get('q') || undefined}
-          name="q"
-          placeholder="get your next car"
-          type="search"
-        />
-        <Button className="h-12 md:hidden">
-          <RadixIconsMixerHorizontal />
-        </Button>
-      </Form>
+
+      <Search />
 
       <section className="flex items-center justify-between">
         <BackButton />

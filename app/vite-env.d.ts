@@ -4,9 +4,17 @@ declare module '@/assets/*'
 declare module '@/content/*'
 declare module 'virtual:routes'
 
-type Status = 'New' | 'Used' | 'Damaged'
-type Gearbox = 'Manual' | 'Automatic'
-type Fule = 'Ethanol' | 'Diesel' | 'Gas' | 'Hydrogen' | 'Electric' | 'Petrol'
+type Status = 'New' | 'Used' | 'Damaged' | null | {}
+type Gearbox = 'Manual' | 'Automatic' | null | {}
+type Fule =
+  | 'Ethanol'
+  | 'Diesel'
+  | 'Gas'
+  | 'Hydrogen'
+  | 'Electric'
+  | 'Petrol'
+  | null
+  | {}
 
 interface Car {
   id: string
@@ -20,4 +28,11 @@ interface Car {
   fuel: Fule
   milage: number
   status: Status
+}
+
+interface Filter {
+  q?: string | null
+  status?: Status | null
+  fule?: Fule | null
+  gearbox?: Gearbox | null
 }

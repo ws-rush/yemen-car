@@ -14,7 +14,7 @@ export function Carcard({ car }: { readonly car: Car }) {
         </h3>
         <div className="flex justify-between">
           <div className="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-700 dark:text-gray-300">
-            <Badge>{car.status}</Badge>
+            <Badge>{`${car.status}`}</Badge>
           </div>
           <span className="z-10 gap-y-1 overflow-hidden leading-6 font-semibold">
             ${car.price}
