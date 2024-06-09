@@ -61,6 +61,7 @@
   "devDependencies": {
     "@babel/preset-react": "^7.24.6",
     "@fontsource/lato": "^5.0.21",
+    "@iconify-json/carbon": "^1.1.31",
     "@iconify-json/radix-icons": "^1.1.14",
     "@iconify-json/tabler": "^1.1.113",
     "@lingui/cli": "^4.11.1",

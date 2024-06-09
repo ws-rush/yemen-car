@@ -28,6 +28,7 @@ interface Car {
   fuel: Fule
   milage: number
   status: Status
+  seats: number
 }
 
 interface Filter {

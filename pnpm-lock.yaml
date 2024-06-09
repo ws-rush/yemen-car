@@ -117,6 +117,9 @@ importers:
       '@fontsource/lato':
         specifier: ^5.0.21
         version: 5.0.21
+      '@iconify-json/carbon':
+        specifier: ^1.1.31
+        version: 1.1.31
       '@iconify-json/radix-icons':
         specifier: ^1.1.14
         version: 1.1.14
@@ -1438,6 +1441,9 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.3':
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+
+  '@iconify-json/carbon@1.1.31':
+    resolution: {integrity: sha512-CAvECFfiwGyZmlcuM2JLMRDEN3VsIEZv6lml7Xf+3giQ5oXloADm0b5wiVPFZmONKM5jXERmx+E7YSvAtFJIbw==}
 
   '@iconify-json/radix-icons@1.1.14':
     resolution: {integrity: sha512-AYBOyhnJ2hXlg3aIn8Ekphrr7zHRyz1l8x6bidM3PDUuTL+aRt8r6cpCvN3GeuTHy2JOhmihbVJRF0bt2FF7Ag==}
@@ -7715,6 +7721,10 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/object-schema@2.0.3': {}
+
+  '@iconify-json/carbon@1.1.31':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/radix-icons@1.1.14':
     dependencies:
